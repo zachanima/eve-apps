@@ -1,4 +1,6 @@
 EveApps::Application.routes.draw do
+  resources :inv_types
+
   resources :apps
 
   # The priority is based upon order of creation:

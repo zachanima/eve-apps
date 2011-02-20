@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @inv_type.type_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @inv_type.name %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%= @inv_type.volume %>
+</p>
+
+<p>
+  <b>Buy:</b>
+  <%= @inv_type.buy %>
+</p>
+
+<p>
+  <b>Sell:</b>
+  <%= @inv_type.sell %>
+</p>
+
+
+<%= link_to 'Edit', edit_inv_type_path(@inv_type) %> |
+<%= link_to 'Back', inv_types_path %>

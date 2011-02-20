@@ -97,6 +97,9 @@
         <td class="value msup3" id="refine_volume">0.0</td>
       </tr>
       <tr>
+        <td>Excess</td>
+        <td class="value msup3" id="refine_excess">0.0</td>
+      <tr>
         <td>Buy value</td>
         <td class="value isk" id="refine_buy">0.00</td>
       </tr>
@@ -108,56 +111,34 @@
       <tr>
         <th colspan="2">Minerals</th>
       </tr>
-      <tr>
-        <td>Tritanium</td>
-        <td class="value" id="type_34">0</td>
-      </tr>
-      <tr>
-        <td>Pyerite</td>
-        <td class="value" id="type_36">0</td>
-      </tr>
-      <tr>
-        <td>Mexallon</td>
-        <td class="value" id="type_37">0</td>
-      </tr>
-      <tr>
-        <td>Isogen</td>
-        <td class="value" id="type_38">0</td>
-      </tr>
-      <tr>
-        <td>Nocxium</td>
-        <td class="value" id="type_39">0</td>
-      </tr>
-      <tr>
-        <td>Zydrine</td>
-        <td class="value" id="type_40">0</td>
-      </tr>
-      <tr>
-        <td>Megacyte</td>
-        <td class="value" id="type_35">0</td>
-      </tr>
-      <tr>
-        <td>Morphite</td>
-        <td class="value">0</td>
-      </tr>
+      <% InvType.find_all_by_type_id(34..40).each do |mineral| %>
+        <tr>
+          <td><%= mineral.name %></td>
+          <td class="value" id="type_<%= mineral.type_id %>">0</td>
+        </tr>
+      <% end %>
 
       <tr>
         <th colspan="2">Compression</th>
       </tr>
       <tr>
-        <td>Volume</td>
+        <td style="color: red;">Volume</td>
         <td class="value msup3" id="compression_volume">0.0</td>
       </tr>
       <tr>
-        <td>Time</td>
+        <td>Excess</td>
+        <td class="value msup3" id="compression_excess">0.0</td>
+      </tr>
+      <tr>
+        <td style="color: red;">Time</td>
         <td class="value s" id="compression_time">0.00</td>
       </tr>
       <tr>
-        <td>Heavy Water</td>
+        <td style="color: red;">Heavy Water</td>
         <td class="value" id="compression_heavy_water">0</td>
       </tr>
       <tr>
-        <td>Strontium</td>
+        <td style="color: red;">Strontium</td>
         <td class="value" id="compression_strontium_clathrates">0</td>
       </tr>
 
@@ -165,15 +146,15 @@
         <th colspan="2">POS Refining</th>
       </tr>
       <tr>
-        <td>35%</td>
+        <td style="color: red;">35%</td>
         <td class="value s" id="refining_standard">0.00</td>
       </tr>
       <tr>
-        <td>75%</td>
+        <td style="color: red;">75%</td>
         <td class="value s" id="refining_medium">0.00</td>
       </tr>
       <tr>
-        <td>75%</td>
+        <td style="color: red;">75%</td>
         <td class="value s" id="refining_intensive">0.00</td>
       </tr>
   </table>

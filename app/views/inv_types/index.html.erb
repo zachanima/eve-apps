@@ -1,0 +1,31 @@
+<h1>Listing inv_types</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Name</th>
+    <th>Volume</th>
+    <th>Buy</th>
+    <th>Sell</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inv_types.each do |inv_type| %>
+  <tr>
+    <td><%= inv_type.type_id %></td>
+    <td><%= inv_type.name %></td>
+    <td><%= inv_type.volume %></td>
+    <td><%= inv_type.buy %></td>
+    <td><%= inv_type.sell %></td>
+    <td><%= link_to 'Show', inv_type %></td>
+    <td><%= link_to 'Edit', edit_inv_type_path(inv_type) %></td>
+    <td><%= link_to 'Destroy', inv_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inv type', new_inv_type_path %>
