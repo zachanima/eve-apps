@@ -1,0 +1,184 @@
+<h1><%= @app.name %></h1>
+
+<%= form_tag @app, :method => :get do %>
+
+  <table style="float: left; margin-right: 10px;">
+    <thead>
+      <th></th>
+      <th>Units</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Arkonor</td>
+        <td><%= text_field_tag :type_22 %></td>
+      </tr>
+      <tr>
+        <td>Bistot</td>
+        <td><%= text_field_tag :type_1223 %></td>
+      </tr>
+      <tr>
+        <td>Crokite</td>
+        <td><%= text_field_tag :type_1225 %></td>
+      </tr>
+      <tr>
+        <td>Dark Ochre</td>
+        <td><%= text_field_tag :type_1232 %></td>
+      </tr>
+      <tr>
+        <td>Gneiss</td>
+        <td><%= text_field_tag :type_1229 %></td>
+      </tr>
+      <tr>
+        <td>Hedbergite</td>
+        <td><%= text_field_tag :type_21 %></td>
+      </tr>
+      <tr>
+        <td>Hemorphite</td>
+        <td><%= text_field_tag :type_1231 %></td>
+      </tr>
+      <tr>
+        <td>Jaspet</td>
+        <td><%= text_field_tag :type_1226 %></td>
+      </tr>
+      <tr>
+        <td>Kernite</td>
+        <td><%= text_field_tag :type_20 %></td>
+      </tr>
+      <tr>
+        <td>Omber</td>
+        <td><%= text_field_tag :type_1227 %></td>
+      </tr>
+      <tr>
+        <td>Plagioclase</td>
+        <td><%= text_field_tag :type_18 %></td>
+      </tr>
+      <tr>
+        <td>Pyroxeres</td>
+        <td><%= text_field_tag :type_1224 %></td>
+      </tr>
+      <tr>
+        <td>Scordite</td>
+        <td><%= text_field_tag :type_1228 %></td>
+      </tr>
+      <tr>
+        <td>Spodumain</td>
+        <td><%= text_field_tag :type_19 %></td>
+      </tr>
+      <tr>
+        <td>Veldspar</td>
+        <td><%= text_field_tag :type_1230 %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <%= check_box_tag :save %>
+          <%= label_tag :save, 'Save values' %>
+          <%= submit_tag 'Compute' %>
+        </td>
+    </tbody>
+  </table>
+
+
+  <table>
+      <tr>
+        <td colspan="2">
+          <img width="200" height="200" />
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">Ore</th>
+      </tr>
+      <tr>
+        <td>Raw</td>
+        <td class="value msup3" id="volume">0.0</td>
+      </tr>
+      <tr>
+        <td>Refined</td>
+        <td class="value msup3" id="refine_volume">0.0</td>
+      </tr>
+      <tr>
+        <td>Buy value</td>
+        <td class="value isk" id="refine_buy">0.00</td>
+      </tr>
+      <tr>
+        <td>Sell value</td>
+        <td class="value isk" id="refine_sell" style="color: #393;">0.00</td>
+      </tr>
+
+      <tr>
+        <th colspan="2">Minerals</th>
+      </tr>
+      <tr>
+        <td>Tritanium</td>
+        <td class="value" id="type_34">0</td>
+      </tr>
+      <tr>
+        <td>Pyerite</td>
+        <td class="value" id="type_36">0</td>
+      </tr>
+      <tr>
+        <td>Mexallon</td>
+        <td class="value" id="type_37">0</td>
+      </tr>
+      <tr>
+        <td>Isogen</td>
+        <td class="value" id="type_38">0</td>
+      </tr>
+      <tr>
+        <td>Nocxium</td>
+        <td class="value" id="type_39">0</td>
+      </tr>
+      <tr>
+        <td>Zydrine</td>
+        <td class="value" id="type_40">0</td>
+      </tr>
+      <tr>
+        <td>Megacyte</td>
+        <td class="value" id="type_35">0</td>
+      </tr>
+      <tr>
+        <td>Morphite</td>
+        <td class="value">0</td>
+      </tr>
+
+      <tr>
+        <th colspan="2">Compression</th>
+      </tr>
+      <tr>
+        <td>Volume</td>
+        <td class="value msup3" id="compression_volume">0.0</td>
+      </tr>
+      <tr>
+        <td>Time</td>
+        <td class="value s" id="compression_time">0.00</td>
+      </tr>
+      <tr>
+        <td>Heavy Water</td>
+        <td class="value" id="compression_heavy_water">0</td>
+      </tr>
+      <tr>
+        <td>Strontium</td>
+        <td class="value" id="compression_strontium_clathrates">0</td>
+      </tr>
+
+      <tr>
+        <th colspan="2">POS Refining</th>
+      </tr>
+      <tr>
+        <td>35%</td>
+        <td class="value s" id="refining_standard">0.00</td>
+      </tr>
+      <tr>
+        <td>75%</td>
+        <td class="value s" id="refining_medium">0.00</td>
+      </tr>
+      <tr>
+        <td>75%</td>
+        <td class="value s" id="refining_intensive">0.00</td>
+      </tr>
+  </table>
+
+<% end %>
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>
