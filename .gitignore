@@ -1,4 +1,10 @@
-.bundle
-db/*.sqlite3
 log/*.log
-tmp/
+tmp/**/*
+doc/api
+doc/app
+config/database.yml
+db/*.sqlite3
+public/images/*
+public/cache/**/*
+public/system/*
+*.swp
