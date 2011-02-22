@@ -1,5 +1,7 @@
 <h1><%= @app.name %></h1>
 
+<%= "#{@updates} updates." if @updates > 0 %>
+
 <%= form_tag @app, :method => :get do %>
 
   <table style="float: left; margin-right: 10px;">

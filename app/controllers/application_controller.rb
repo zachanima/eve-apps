@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
     inv_types = InvType.find_all_by_type_id(types.sort)
 
     types = inv_types.collect do |type|
-      type.type_id if Time.now - 86400 > type.updated_at
+      type.type_id if Time.now - 1.day > type.updated_at
     end.flatten.compact
+
+    @updates = types.length
 
     if types
       url = [
