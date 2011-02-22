@@ -4,7 +4,7 @@
   <title>EveApps</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
-  <%= javascript_include_tag app_path(@app) + '.js' if @app %>
+  <%= javascript_include_tag app_path(@app) + '.js' if @app and not @app.new_record? %>
   <%= csrf_meta_tag %>
 </head>
 <body>
