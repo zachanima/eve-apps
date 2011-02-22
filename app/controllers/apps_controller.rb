@@ -6,7 +6,7 @@ class AppsController < ApplicationController
 
   def show
     @types = [34,35,36,37,38,39,40]
-    #update_values(@types)
+    update_values(@types)
   end
 
   def new
