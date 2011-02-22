@@ -1,11 +1,5 @@
 var Data = {
-  <% InvType.find_all_by_type_id(34..40).each do |type| %>
-    <%= type.type_id %>: {
-      volume: <%= type.volume %>,
-      buy: <%= type.buy || 0 %>,
-      sell: <%= type.sell %>
-    },
-  <% end %>
+  <%= generate_json(@types) %>
 
   22: {
     name: 'Arkonor',

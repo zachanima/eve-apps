@@ -1,19 +1,19 @@
 class AppsController < ApplicationController
+  before_filter :find_app, :only => [:show, :edit, :update, :destroy]
   def index
     @apps = App.all
   end
 
   def show
-    @app = App.find(params[:id])
+    @types = [34,35,36,37,38,39,40]
+    #update_values(@types)
   end
 
   def new
     @app = App.new
   end
 
-  def edit
-    @app = App.find(params[:id])
-  end
+  # def edit
 
   def create
     @app = App.new(params[:app])
@@ -26,8 +26,6 @@ class AppsController < ApplicationController
   end
 
   def update
-    @app = App.find(params[:id])
-
     if @app.update_attributes(params[:app])
       redirect_to(@app, :notice => 'App was successfully updated.')
     else
@@ -36,9 +34,13 @@ class AppsController < ApplicationController
   end
 
   def destroy
-    @app = App.find(params[:id])
     @app.destroy
 
     redirect_to(apps_url)
+  end
+
+  private
+  def find_app
+    @app = App.find(params[:id])
   end
 end

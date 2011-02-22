@@ -18,6 +18,10 @@ a:hover { color: #fff; background-color:#000; }
   color: green;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 input[type=text], .value {
   text-align: right;
 }
