@@ -7,6 +7,6 @@ module AppsHelper
     sell: #{type.sell || 0}
   },
   "
-    end
+    end.join
   end
 end
