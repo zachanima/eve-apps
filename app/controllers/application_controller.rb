@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
     @updates = types.length
 
-    if types
+    if @updates > 0
       url = [
         'http://api.eve-central.com/api/marketstat?typeid=',
         types.join('&typeid='),

@@ -245,7 +245,24 @@ function compute() {
 
 
 $(function() {
-  $('td input[type=submit]').click(function() {
+  // Clear default text.
+  $('input[type=text]').focus(function() {
+    if ($(this).attr('class') == 'inactive') {
+      $(this).attr('title', $(this).val());
+      $(this).val('');
+      $(this).removeClass('inactive');
+    }
+  });
+
+  // Set default text.
+  $('input[type=text]').blur(function() {
+    if ($(this).val() == '') {
+      $(this).val($(this).attr('title'));
+      $(this).addClass('inactive');
+    }
+  });
+
+  $('input[type=submit]').click(function() {
     compute();
     return false;
   });
