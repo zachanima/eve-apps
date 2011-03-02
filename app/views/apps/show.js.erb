@@ -238,7 +238,6 @@ function compute() {
 
   $('#volume').html(addCommas(volume.toFixed(1)));
   $('#haul_time').html(addCommas(haul_time.toFixed(1)));
-  $('#ore').html(addCommas(volume.toFixed(1)));
   $('#refine_volume').html(addCommas(refine_volume.toFixed(1)));
   $('#refine_excess').html(addCommas(refine_excess.toFixed(1)));
   $('#refine_sell').html(addCommas(refine_sell.toFixed(2)));
@@ -252,6 +251,12 @@ function compute() {
   $('#refining_standard').html(addCommas(refining_standard.toFixed(2)));
   $('#refining_medium').html(addCommas(refining_medium.toFixed(2)));
   $('#refining_intensive').html(addCommas(refining_intensive.toFixed(2)));
+
+  $('#ore').html(addCommas(volume.toFixed(1)));
+  $('#minerals').html(addCommas(refine_sell.toFixed(2)));
+  $('#mining').html(addCommas(mining_time.toFixed(1)));
+  $('#compression').html(addCommas(compression_volume.toFixed(1)));
+  $('#pos_refining').html(addCommas(refining_intensive.toFixed(1)));
 }
 
 
