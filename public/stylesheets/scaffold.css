@@ -7,6 +7,7 @@ body {
 body, p, ol, ul, td, input {
   font: 9pt arial narrow, arial, sans-serif;
   letter-spacing: 0.1em;
+  text-shadow: 1px 1px 1px #000;
 }
 
 h1 {
@@ -20,8 +21,45 @@ h1 {
 table {
   border: 1px solid #333;
   border-collapse: collapse;
-  background-color: #000;
   width: 300px;
+}
+
+th, td {
+  border: 1px solid #444;
+  border-width: 1px 0;
+}
+
+tr:hover th, tr:hover td {
+  background-color: #444;
+}
+
+tr.default:hover td {
+  background-color: #666;
+}
+
+th {
+  background-color: #000;
+  text-align: left;
+  font-weight: normal;
+  padding: 4px;
+}
+
+th:first-child:before {
+  content: '\25b6';
+  margin: 0 4px;
+  vertical-align: 10%;
+}
+
+tr.active th:first-child:before {
+  content: '\25bc';
+}
+
+tr.default {
+  background-color: #222;
+}
+
+td {
+  padding-left: 12px;
 }
 
 div.form {

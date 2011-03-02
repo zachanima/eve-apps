@@ -215,35 +215,43 @@ function compute() {
     }
   };
 
-  ore_time = volume / 150000;
+  var haul_time = volume / 48000.0 * 5 / 60;
 
   var refining_standard  = volume /  40000 *  3600;
   var refining_medium    = volume /  20000 *  5400;
   var refining_intensive = volume / 200000 * 10800;
 
-  var refine_buy = 0.0;
   var refine_sell = 0.0;
+  var refine_buy = 0.0;
   var refine_volume = 0.0;
 
   for (i in mineral_units) {
-    refine_buy += Data[i].buy * mineral_units[i];
     refine_sell += Data[i].sell * mineral_units[i];
+    refine_buy += Data[i].buy * mineral_units[i];
     refine_volume += Data[i].volume * mineral_units[i];
     $('#type_' + i).html(addCommas(mineral_units[i]));
   }
 
+  var mining_time = volume / 150000;
+  var mining_sell = refine_sell / mining_time;
+  var mining_buy = refine_buy / mining_time;
+
   $('#volume').html(addCommas(volume.toFixed(1)));
-  $('#ore_time').html(addCommas(ore_time.toFixed(1)));
+  $('#haul_time').html(addCommas(haul_time.toFixed(1)));
+  $('#ore').html(addCommas(volume.toFixed(1)));
+  $('#refine_volume').html(addCommas(refine_volume.toFixed(1)));
+  $('#refine_excess').html(addCommas(refine_excess.toFixed(1)));
+  $('#refine_sell').html(addCommas(refine_sell.toFixed(2)));
+  $('#refine_buy').html(addCommas(refine_buy.toFixed(2)));
+  $('#mining_time').html(addCommas(mining_time.toFixed(1)));
+  $('#mining_sell').html(addCommas(mining_sell.toFixed(2)));
+  $('#mining_buy').html(addCommas(mining_buy.toFixed(2)));
   $('#compression_volume').html(addCommas(compression_volume.toFixed(1)));
   $('#compression_excess').html(addCommas(compression_excess.toFixed(1)));
   $('#compression_time').html(addCommas(compression_time.toFixed(2)));
   $('#refining_standard').html(addCommas(refining_standard.toFixed(2)));
   $('#refining_medium').html(addCommas(refining_medium.toFixed(2)));
   $('#refining_intensive').html(addCommas(refining_intensive.toFixed(2)));
-  $('#refine_volume').html(addCommas(refine_volume.toFixed(1)));
-  $('#refine_excess').html(addCommas(refine_excess.toFixed(1)));
-  $('#refine_buy').html(addCommas(refine_buy.toFixed(2)));
-  $('#refine_sell').html(addCommas(refine_sell.toFixed(2)));
 }
 
 

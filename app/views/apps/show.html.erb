@@ -28,16 +28,17 @@
 
 
 <table>
-  <tr>
-    <th colspan="2">Ore</th>
+  <tr class="active">
+    <th>Ore</th>
+    <th class="value msup3" id="ore">0.0</th>
   </tr>
-  <tr style="background-color: #222;">
+  <tr class="default">
     <td>Volume</td>
     <td class="value msup3" id="volume">0.0</td>
   </tr>
   <tr>
-    <td style="color: yellow;">Time (1 Hulk)</td>
-    <td class="value hrs" id="ore_time">0</td>
+    <td style="color: yellow;">Hauling (48k m&sup3;)</td>
+    <td class="value hrs" id="haul_time">0.0</td>
   </tr>
   <tr>
     <td style="color: red;">Buy value</td>
@@ -48,8 +49,9 @@
     <td class="value isk" id="ore_sell">0.00</td>
   </tr>
 
-  <tr>
-    <th colspan="2">Minerals</th>
+  <tr class="active">
+    <th>Minerals</th>
+    <th class="value isk" id="minerals">0.00</th>
   </tr>
   <% InvType.find_all_by_type_id(34..40).each do |mineral| %>
     <tr>
@@ -65,19 +67,35 @@
     <td>Unrefinable</td>
     <td class="value msup3" id="refine_excess">0.0</td>
   <tr>
-  <tr>
+  <tr class="default">
     <td>Dodixie sell</td>
     <td class="value isk" id="refine_sell">0.00</td>
   </tr>
-  <tr style="background-color: #222;">
+  <tr>
     <td>Dodixie buy</td>
     <td class="value isk" id="refine_buy">0.00</td>
   </tr>
 
+  <tr class="active">
+    <th colspan="2">Mining</th>
+  </tr>
+  <tr class="default">
+    <td style="color: yellow;">Time (150k m&sup3;/h)</td>
+    <td class="value hrs" id="mining_time">0.0</td>
+  </tr>
   <tr>
+    <td style="color: yellow;">Sell / hour</td>
+    <td class="value isk" id="mining_sell">0.00</td>
+  </tr>
+  <tr>
+    <td style="color: yellow;">Buy / hour</td>
+    <td class="value isk" id="mining_buy">0.00</td>
+  </tr>
+
+  <tr class="active">
     <th colspan="2">Compression</th>
   </tr>
-  <tr style="background-color: #222;">
+  <tr class="default">
     <td style="color: red;">Volume</td>
     <td class="value msup3" id="compression_volume">0.0</td>
   </tr>
@@ -101,7 +119,7 @@
     <td style="color: red;">Expenses</td>
     <td class="value isk" id="compression_expenses">0.00</td>
 
-  <tr>
+  <tr class="active">
     <th colspan="2">POS Refining</th>
   </tr>
   <tr>
@@ -112,7 +130,7 @@
     <td style="color: red;">75%</td>
     <td class="value s" id="refining_medium">0.00</td>
   </tr>
-  <tr style="background-color: #222;">
+  <tr class="default">
     <td style="color: red;">75%</td>
     <td class="value s" id="refining_intensive">0.00</td>
   </tr>
