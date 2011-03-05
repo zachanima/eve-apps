@@ -215,7 +215,8 @@ function compute() {
     }
   };
 
-  var haul_time = volume / 48000.0 * 5 / 60;
+  // Iteron Mark V @ 100%: 49233.1 m3.
+  var haul_time = volume / 49088 * 240;
 
   var refining_standard  = volume /  40000 *  3600;
   var refining_medium    = volume /  20000 *  5400;
