@@ -1,7 +1,7 @@
 body {
   background-color: #111;
   color: #aaa;
-  margin: 8px;
+  margin: 12px;
 }
 
 body, p, ol, ul, td, input {
@@ -18,15 +18,28 @@ h1 {
   margin: 0 0 8px 0;
 }
 
-table {
+.category {
   border: 1px solid #333;
-  border-collapse: collapse;
-  width: 300px;
+  border-width: 1px 1px 0 1px;
+  margin-left: 160px;
 }
 
-th, td {
+.category:last-child {
+  border-bottom-width: 1px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
   border: 1px solid #444;
-  border-width: 1px 0;
+  border-width: 0 0 1px 0;
+}
+
+tr:last-child {
+  border-bottom-width: 0;
 }
 
 tr:hover th, tr:hover td {
@@ -62,10 +75,11 @@ td {
   padding-left: 12px;
 }
 
-div.form {
+.form {
   text-align: center;
   float: left;
   margin-right: 8px;
+  margin-top: -2px;
   width: 150px;
 }
 
