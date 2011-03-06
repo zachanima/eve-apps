@@ -28,131 +28,151 @@
 
 <div class="category">
   <table>
-    <tr class="active">
-      <th>Ore</th>
-      <th class="value msup3" id="ore">0.0</th>
-    </tr>
-    <tr class="default">
-      <td>Volume</td>
-      <td class="value msup3" id="volume">0.0</td>
-    </tr>
-    <tr>
-      <td>Hauling</td>
-      <td class="value s" id="haul_time">0.0</td>
-    </tr>
-    <tr>
-      <td style="color: red;">Buy value</td>
-      <td class="value isk" id="ore_buy">0.00</td>
-    </tr>
-    <tr>
-      <td style="color: red;">Sell value</td>
-      <td class="value isk" id="ore_sell">0.00</td>
-    </tr>
-  </table>
-</div>
-
-<div class="category">
-  <table>
-    <tr class="active">
-      <th>Minerals</th>
-      <th class="value isk" id="minerals">0.00</th>
-    </tr>
-    <% InvType.find_all_by_type_id(34..40).each do |mineral| %>
+    <thead>
       <tr>
-        <td><%= mineral.name %></td>
-        <td class="value" id="type_<%= mineral.type_id %>">0</td>
+        <th>Ore</th>
+        <th class="value msup3" id="ore">0.0</th>
       </tr>
-    <% end %>
-    <tr>
-      <td>Volume</td>
-      <td class="value msup3" id="refine_volume">0.0</td>
-    </tr>
-    <tr>
-      <td>Unrefinable</td>
-      <td class="value msup3" id="refine_excess">0.0</td>
-    <tr>
-    <tr class="default">
-      <td>Dodixie sell</td>
-      <td class="value isk" id="refine_sell">0.00</td>
-    </tr>
-    <tr>
-      <td>Dodixie buy</td>
-      <td class="value isk" id="refine_buy">0.00</td>
-    </tr>
+    </thead>
+    <tbody>
+      <tr class="default">
+        <td>Volume</td>
+        <td class="value msup3" id="volume">0.0</td>
+      </tr>
+      <tr>
+        <td>Hauling</td>
+        <td class="value s" id="haul_time">0.0</td>
+      </tr>
+      <tr>
+        <td style="color: red;">Buy value</td>
+        <td class="value isk" id="ore_buy">0.00</td>
+      </tr>
+      <tr>
+        <td style="color: red;">Sell value</td>
+        <td class="value isk" id="ore_sell">0.00</td>
+      </tr>
+    </tbody>
   </table>
 </div>
 
 <div class="category">
   <table>
-    <tr class="active">
-      <th>Mining</th>
-      <th class="value hrs" id="mining">0.0</th>
-    </tr>
-    <tr class="default">
-      <td style="color: yellow;">Time (150k m&sup3;/h)</td>
-      <td class="value hrs" id="mining_time">0.0</td>
-    </tr>
-    <tr>
-      <td style="color: yellow;">Sell / hour</td>
-      <td class="value isk" id="mining_sell">0.00</td>
-    </tr>
-    <tr>
-      <td style="color: yellow;">Buy / hour</td>
-      <td class="value isk" id="mining_buy">0.00</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Minerals</th>
+        <th class="value isk" id="minerals">0.00</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% InvType.find_all_by_type_id(34..40).each do |mineral| %>
+        <tr>
+          <td><%= mineral.name %></td>
+          <td class="value" id="type_<%= mineral.type_id %>">0</td>
+        </tr>
+      <% end %>
+      <tr>
+        <td>Volume</td>
+        <td class="value msup3" id="refine_volume">0.0</td>
+      </tr>
+      <tr>
+        <td>Unrefinable</td>
+        <td class="value msup3" id="refine_excess">0.0</td>
+      <tr>
+      <tr>
+        <td>Dodixie sell</td>
+        <td class="value isk" id="refine_sell">0.00</td>
+      </tr>
+      <tr class="default">
+        <td>Dodixie buy</td>
+        <td class="value isk" id="refine_buy">0.00</td>
+      </tr>
+    </tbody>
   </table>
 </div>
 
 <div class="category">
   <table>
-    <tr class="active">
-      <th>Compression</th>
-      <th class="value msup3" id="compression">0.0</th>
-    </tr>
-    <tr class="default">
-      <td style="color: red;">Volume</td>
-      <td class="value msup3" id="compression_volume">0.0</td>
-    </tr>
-    <tr>
-      <td>Excess</td>
-      <td class="value msup3" id="compression_excess">0.0</td>
-    </tr>
-    <tr>
-      <td style="color: red;">Time</td>
-      <td class="value s" id="compression_time">0.00</td>
-    </tr>
-    <tr>
-      <td style="color: red;">Heavy Water</td>
-      <td class="value" id="compression_heavy_water">0</td>
-    </tr>
-    <tr>
-      <td style="color: red;">Strontium</td>
-      <td class="value" id="compression_strontium_clathrates">0</td>
-    </tr>
-    <tr>
-      <td style="color: red;">Expenses</td>
-      <td class="value isk" id="compression_expenses">0.00</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Mining</th>
+        <th class="value hrs" id="mining">0.0</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="default">
+        <td style="color: yellow;">Time (150k m&sup3;/h)</td>
+        <td class="value hrs" id="mining_time">0.0</td>
+      </tr>
+      <tr>
+        <td style="color: yellow;">Sell / hour</td>
+        <td class="value isk" id="mining_sell">0.00</td>
+      </tr>
+      <tr>
+        <td style="color: yellow;">Buy / hour</td>
+        <td class="value isk" id="mining_buy">0.00</td>
+      </tr>
+    </tbody>
   </table>
 </div>
 
 <div class="category">
   <table>
-    <tr class="active">
-      <th>POS Refining</th>
-      <th class="value s">0.0</th>
-    </tr>
-    <tr>
-      <td style="color: red;">35%</td>
-      <td class="value s" id="refining_standard">0.00</td>
-    </tr>
-    <tr>
-      <td style="color: red;">75%</td>
-      <td class="value s" id="refining_medium">0.00</td>
-    </tr>
-    <tr class="default">
-      <td style="color: red;">75%</td>
-      <td class="value s" id="refining_intensive">0.00</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Compression</th>
+        <th class="value msup3" id="compression">0.0</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="default">
+        <td style="color: red;">Volume</td>
+        <td class="value msup3" id="compression_volume">0.0</td>
+      </tr>
+      <tr>
+        <td>Excess</td>
+        <td class="value msup3" id="compression_excess">0.0</td>
+      </tr>
+      <tr>
+        <td style="color: red;">Time</td>
+        <td class="value s" id="compression_time">0.00</td>
+      </tr>
+      <tr>
+        <td style="color: red;">Heavy Water</td>
+        <td class="value" id="compression_heavy_water">0</td>
+      </tr>
+      <tr>
+        <td style="color: red;">Strontium</td>
+        <td class="value" id="compression_strontium_clathrates">0</td>
+      </tr>
+      <tr>
+        <td style="color: red;">Expenses</td>
+        <td class="value isk" id="compression_expenses">0.00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="category">
+  <table>
+    <thead>
+      <tr>
+        <th>POS Refining</th>
+        <th class="value s">0.0</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color: red;">35%</td>
+        <td class="value s" id="refining_standard">0.00</td>
+      </tr>
+      <tr>
+        <td style="color: red;">75%</td>
+        <td class="value s" id="refining_medium">0.00</td>
+      </tr>
+      <tr class="default">
+        <td style="color: red;">75%</td>
+        <td class="value s" id="refining_intensive">0.00</td>
+      </tr>
+    </tbody>
   </table>
 </div>

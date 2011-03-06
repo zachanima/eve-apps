@@ -28,17 +28,21 @@ h1 {
   border-bottom-width: 1px;
 }
 
+.category tbody {
+  display: none;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-tr {
+.active th, td {
   border: 1px solid #444;
   border-width: 0 0 1px 0;
 }
 
-tr:last-child {
+tbody tr:last-child td {
   border-bottom-width: 0;
 }
 
@@ -63,7 +67,7 @@ th:first-child:before {
   vertical-align: 10%;
 }
 
-tr.active th:first-child:before {
+.active th:first-child:before {
   content: '\25bc';
 }
 

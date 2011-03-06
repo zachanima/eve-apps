@@ -254,7 +254,7 @@ function compute() {
   $('#refining_intensive').html(addCommas(refining_intensive.toFixed(2)));
 
   $('#ore').html(addCommas(volume.toFixed(1)));
-  $('#minerals').html(addCommas(refine_sell.toFixed(2)));
+  $('#minerals').html(addCommas(refine_buy.toFixed(2)));
   $('#mining').html(addCommas(mining_time.toFixed(1)));
   $('#compression').html(addCommas(compression_volume.toFixed(1)));
   $('#pos_refining').html(addCommas(refining_intensive.toFixed(1)));
@@ -280,6 +280,14 @@ $(function() {
   });
 
   // Collapse category.
+  $('.category thead').click(function() {
+    $(this).next('tbody').toggle();
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+    } else {
+      $(this).addClass('active');
+    }
+  });
 
   $('input[type=submit]').click(function() {
     compute();
