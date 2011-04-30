@@ -1,5 +1,6 @@
 class AppsController < ApplicationController
   before_filter :find_app, :only => [:show, :edit, :update, :destroy]
+
   def index
     @apps = App.all
   end

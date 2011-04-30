@@ -21,7 +21,7 @@ h1 {
 .category {
   border: 1px solid #333;
   border-width: 1px 1px 0 1px;
-  margin-left: 160px;
+  margin-left: 210px;
 }
 
 .category:last-child {
@@ -80,11 +80,15 @@ td {
 }
 
 .form {
-  text-align: center;
+  text-align: left;
   float: left;
   margin-right: 8px;
   margin-top: -2px;
-  width: 150px;
+  width: 200px;
+}
+
+.form img {
+  vertical-align: middle;
 }
 
 input {
@@ -95,7 +99,7 @@ input {
 }
 
 input[type=text] {
-  width: 146px;
+  width: 156px;
 }
 
 input[type=text]:focus {
