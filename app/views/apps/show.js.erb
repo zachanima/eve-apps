@@ -263,7 +263,7 @@ function compute() {
 
   <% elsif @app.id == 2 %>
 
-  var gas_buy = 0.0
+  var gas_buy = 0.0;
   for (i in Data) {
     var type = Data[i];
     var units = parseInt($('#type_' + i).val());
@@ -273,7 +273,7 @@ function compute() {
     }
   }
 
-  #('#gas_buy').html(addCommas(gas_buy.toFixed(2)));
+  $('#gas_buy').html(addCommas(gas_buy.toFixed(2)));
 
   <% end %>
 }
