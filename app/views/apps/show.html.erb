@@ -15,6 +15,8 @@
   <% end %>
 </div>
 
+<% if @app.id == 1 %>
+
 <div class="category">
   <table>
     <thead>
@@ -24,7 +26,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="default">
+      <tr>
         <td>Volume</td>
         <td class="value msup3" id="volume">0.0</td>
       </tr>
@@ -165,3 +167,38 @@
     </tbody>
   </table>
 </div>
+
+
+<% elsif @app.id == 2 %>
+<!-- @types = [30375,30376,30377,30370,30378,30371,30372,30373,30374] -->
+
+<div class="category">
+  <table>
+    <thead>
+      <tr>
+        <th>Gas</th>
+        <th class="value isk" id="gas">0.0</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Volume</td>
+        <td class="value msup3" id="volume">0.0</td>
+      </tr>
+      <tr>
+        <td>Hauling</td>
+        <td class="value s" id="haul_time">0.0</td>
+      </tr>
+      <tr class="default">
+        <td style="color: red;">Buy value</td>
+        <td class="value isk" id="gas_buy">0.00</td>
+      </tr>
+      <tr>
+        <td style="color: red;">Sell value</td>
+        <td class="value isk" id="gas_sell">0.00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<% end %>

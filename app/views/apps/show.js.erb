@@ -188,6 +188,7 @@ var Data = {
 
 
 function compute() {
+  <% if @app.id == 1 %>
   var volume = 0.0;
   var compression_volume = 0.0;
   var compression_excess = 0.0;
@@ -258,6 +259,23 @@ function compute() {
   $('#mining').html(addCommas(mining_time.toFixed(1)));
   $('#compression').html(addCommas(compression_volume.toFixed(1)));
   $('#pos_refining').html(addCommas(refining_intensive.toFixed(1)));
+
+
+  <% elsif @app.id == 2 %>
+
+  var gas_buy = 0.0
+  for (i in Data) {
+    var type = Data[i];
+    var units = parseInt($('#type_' + i).val());
+
+    if (units > 0) {
+      gas_buy == type.buy * units;
+    }
+  }
+
+  #('#gas_buy').html(addCommas(gas_buy.toFixed(2)));
+
+  <% end %>
 }
 
 
@@ -294,3 +312,5 @@ $(function() {
     return false;
   });
 });
+
+
