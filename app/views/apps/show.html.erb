@@ -5,50 +5,10 @@
 <div class="form">
   <%= form_tag @app, :method => :get do %>
 
-    <img src="http://image.eveonline.com/InventoryType/22_32.png" />
-    <%= text_field_tag :type_22, 'Arkonor', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1223_32.png" />
-    <%= text_field_tag :type_1223, 'Bistot', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1225_32.png" />
-    <%= text_field_tag :type_1225, 'Crokite', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1232_32.png" />
-    <%= text_field_tag :type_1232, 'Dark Ochre', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1229_32.png" />
-    <%= text_field_tag :type_1229, 'Gneiss', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/21_32.png" />
-    <%= text_field_tag :type_21, 'Hedbergite', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1231_32.png" />
-    <%= text_field_tag :type_1231, 'Hemorphite', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1226_32.png" />
-    <%= text_field_tag :type_1226, 'Jaspet', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/20_32.png" />
-    <%= text_field_tag :type_20, 'Kernite', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1227_32.png" />
-    <%= text_field_tag :type_1227, 'Omber', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/18_32.png" />
-    <%= text_field_tag :type_18, 'Plagioclase', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1224_32.png" />
-    <%= text_field_tag :type_1224, 'Pyroxeres', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1228_32.png" />
-    <%= text_field_tag :type_1228, 'Scordite', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/19_32.png" />
-    <%= text_field_tag :type_19, 'Spodumain', :class => 'inactive' %>
-
-    <img src="http://image.eveonline.com/InventoryType/1230_32.png" />
-    <%= text_field_tag :type_1230, 'Veldspar', :class => 'inactive' %>
+    <% @inputs.each_pair do |key, value| %>
+      <img src="http://image.eveonline.com/InventoryType/<%= key %>_32.png" />
+      <%= text_field_tag "type_#{key}", value, :class => 'inactive' %>
+    <% end %>
 
     <%= submit_tag 'Compute' %>
 

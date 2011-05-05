@@ -7,6 +7,23 @@ class AppsController < ApplicationController
 
   def show
     @types = [34,35,36,37,38,39,40]
+    @inputs = {
+      22 => 'Arkonor',
+      1223 => 'Bistot',
+      1225 => 'Crokite',
+      1232 => 'Dark Ochre',
+      1229 => 'Gneiss',
+      21 => 'Hedbergite',
+      1231 => 'Hemorphite',
+      1226 => 'Jaspet',
+      20 => 'Kernite',
+      1227 => 'Omber',
+      18 => 'Plagioclase',
+      1224 => 'Pyroxeres',
+      1228 => 'Scordite',
+      19 => 'Spodumain',
+      1230 => 'Veldspar'
+    }
     update_values(@types)
   end
 
