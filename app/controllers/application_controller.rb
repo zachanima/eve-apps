@@ -2,13 +2,14 @@ require 'net/http'
 require 'rexml/document'
 
 class ApplicationController < ActionController::Base
+  helper_method :update_values
   protect_from_forgery
 
   def update_values(types)
     inv_types = InvType.find_all_by_type_id(types.sort)
 
     types = inv_types.collect do |type|
-      type.type_id if Time.now - 1.day > type.updated_at
+      type.type_id if Time.now - 1.day > type.updated_at or not type.buy
     end.flatten.compact
 
     @updates = types.length
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
         'http://api.eve-central.com/api/marketstat?typeid=',
         types.join('&typeid='),
         '&usesystem=',
-        30002659
+        30000142
       ].join
 
       sell = Array.new

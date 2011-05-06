@@ -268,12 +268,14 @@ function compute() {
     var type = Data[i];
     var units = parseInt($('#type_' + i).val());
 
+
     if (units > 0) {
-      gas_buy == type.buy * units;
+      gas_buy += type.buy * units;
     }
   }
 
   $('#gas_buy').html(addCommas(gas_buy.toFixed(2)));
+  $('#gas').html(addCommas(gas_buy.toFixed(2)));
 
   <% end %>
 }
