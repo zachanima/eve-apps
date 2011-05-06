@@ -277,6 +277,27 @@ function compute() {
   $('#gas_buy').html(addCommas(gas_buy.toFixed(2)));
   $('#gas').html(addCommas(gas_buy.toFixed(2)));
 
+  var barren       = Data[30370].buy * 3000 + Data[30371].buy * 1500;
+  var token        = Data[30371].buy * 3000 + Data[30372].buy * 1500;
+  var minor        = Data[30372].buy * 3000 + Data[30373].buy * 1500;
+  var ordinary     = Data[30373].buy * 3000 + Data[30374].buy * 1500;
+  var sizeable     = Data[30374].buy * 3000 + Data[30370].buy * 1500;
+  var bountiful    = Data[30375].buy * 5000 + Data[30376].buy * 1000;
+  var vast         = Data[30376].buy * 5000 + Data[30375].buy * 1000;
+  var vital        = Data[30377].buy *  500 + Data[30378].buy * 5000;
+  var instrumental = Data[30378].buy *  500 + Data[30377].buy * 5000;
+
+  $('#barren').html(addCommas(barren.toFixed(2)));
+  $('#token').html(addCommas(token.toFixed(2)));
+  $('#minor').html(addCommas(minor.toFixed(2)));
+  $('#ordinary').html(addCommas(ordinary.toFixed(2)));
+  $('#sizeable').html(addCommas(sizeable.toFixed(2)));
+  $('#bountiful').html(addCommas(bountiful.toFixed(2)));
+  $('#vast').html(addCommas(vast.toFixed(2)));
+  $('#vital').html(addCommas(vital.toFixed(2)));
+  $('#instrumental').html(addCommas(instrumental.toFixed(2)));
+  $('#sites').html('(Instrumental) ' + addCommas(instrumental.toFixed(2)));
+
   <% end %>
 }
 
@@ -313,6 +334,8 @@ $(function() {
     compute();
     return false;
   });
+
+  $('input[type=submit]').click();
 });
 
 
