@@ -26,10 +26,10 @@ class ApplicationController < ActionController::Base
       buy = Array.new
       
       data = Net::HTTP.get_response(URI.parse(url)).body
-      REXML::Document.new(data).elements.each('/evec_api/marketstat/type/sell/median') do |item|
+      REXML::Document.new(data).elements.each('/evec_api/marketstat/type/sell/min') do |item|
         sell << item.to_s.gsub(/[^0-9\.]/, '').to_f
       end
-      REXML::Document.new(data).elements.each('/evec_api/marketstat/type/buy/median') do |item|
+      REXML::Document.new(data).elements.each('/evec_api/marketstat/type/buy/max') do |item|
         buy << item.to_s.gsub(/[^0-9\.]/, '').to_f
       end
 
