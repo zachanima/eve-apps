@@ -261,6 +261,7 @@ function compute() {
   $('#pos_refining').html(addCommas(refining_intensive.toFixed(1)));
 
 
+  // Gas Harvesting.
   <% elsif @app.id == 2 %>
 
   var gas_buy = 0.0;
@@ -295,8 +296,10 @@ function compute() {
   $('#bountiful').html(addCommas(bountiful.toFixed(2)));
   $('#vast').html(addCommas(vast.toFixed(2)));
   $('#vital').html(addCommas(vital.toFixed(2)));
-  $('#instrumental').html(addCommas(instrumental.toFixed(2)));
   $('#sites').html('(Instrumental) ' + addCommas(instrumental.toFixed(2)));
+
+  $('#instrumental').html(addCommas(instrumental.toFixed(2)));
+  $('#instrumental_buy').html(addCommas(instrumental.toFixed(2)));
 
   <% end %>
 }
