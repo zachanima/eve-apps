@@ -269,7 +269,6 @@ function compute() {
     var type = Data[i];
     var units = parseInt($('#type_' + i).val());
 
-
     if (units > 0) {
       gas_buy += type.buy * units;
     }
@@ -278,28 +277,51 @@ function compute() {
   $('#gas_buy').html(addCommas(gas_buy.toFixed(2)));
   $('#gas').html(addCommas(gas_buy.toFixed(2)));
 
-  var barren       = Data[30370].buy * 3000 + Data[30371].buy * 1500;
-  var token        = Data[30371].buy * 3000 + Data[30372].buy * 1500;
-  var minor        = Data[30372].buy * 3000 + Data[30373].buy * 1500;
-  var ordinary     = Data[30373].buy * 3000 + Data[30374].buy * 1500;
-  var sizeable     = Data[30374].buy * 3000 + Data[30370].buy * 1500;
-  var bountiful    = Data[30375].buy * 5000 + Data[30376].buy * 1000;
-  var vast         = Data[30376].buy * 5000 + Data[30375].buy * 1000;
-  var vital        = Data[30377].buy *  500 + Data[30378].buy * 6000;
-  var instrumental = Data[30378].buy *  500 + Data[30377].buy * 6000;
+  var barren_buy       = Data[30370].buy * 3000 + Data[30371].buy * 1500;
+  var token_buy        = Data[30371].buy * 3000 + Data[30372].buy * 1500;
+  var minor_buy        = Data[30372].buy * 3000 + Data[30373].buy * 1500;
+  var ordinary_buy     = Data[30373].buy * 3000 + Data[30374].buy * 1500;
+  var sizeable_buy     = Data[30374].buy * 3000 + Data[30370].buy * 1500;
+  var bountiful_buy    = Data[30375].buy * 5000 + Data[30376].buy * 1000;
+  var vast_buy         = Data[30376].buy * 5000 + Data[30375].buy * 1000;
+  var vital_buy        = Data[30377].buy *  500 + Data[30378].buy * 6000;
+  var instrumental_buy = Data[30378].buy *  500 + Data[30377].buy * 6000;
 
-  $('#barren').html(addCommas(barren.toFixed(2)));
-  $('#token').html(addCommas(token.toFixed(2)));
-  $('#minor').html(addCommas(minor.toFixed(2)));
-  $('#ordinary').html(addCommas(ordinary.toFixed(2)));
-  $('#sizeable').html(addCommas(sizeable.toFixed(2)));
-  $('#bountiful').html(addCommas(bountiful.toFixed(2)));
-  $('#vast').html(addCommas(vast.toFixed(2)));
-  $('#vital').html(addCommas(vital.toFixed(2)));
-  $('#sites').html('(Instrumental) ' + addCommas(instrumental.toFixed(2)));
+  var c3_ftm                 = Data[30311].buy *  2 / (Data[   40].buy *  80 +
+                                                       Data[30374].buy * 100 +
+                                                       Data[30378].buy * 100);
 
-  $('#instrumental').html(addCommas(instrumental.toFixed(2)));
-  $('#instrumental_buy').html(addCommas(instrumental.toFixed(2)));
+  var carbon_86              = Data[30310].buy *  8 / (Data[   39].buy *  30 +
+                                                       Data[30376].buy * 100 +
+                                                       Data[30377].buy * 100);
+  var fullerene_intercalated;
+  var fulleroferocene;
+  var graphene               = Data[30309].buy * 30 / (Data[   38].buy * 400 +
+                                                       Data[30375].buy * 100 +
+                                                       Data[30376].buy * 100);
+  var lanthanum;
+  var methanofullerene;
+  var ppd;
+  var scandium;
+
+  var vast_buy_polymer         = Data[30376].buy * 5000 * graphene +
+                                 Data[30375].buy * 1000 * graphene;
+  var vital_buy_polymer        = Data[30377].buy *  500 * carbon_86 +
+                                 Data[30378].buy * 6000 * c3_ftm;
+  var instrumental_buy_polymer = Data[30377].buy * 6000 * carbon_86 +
+                                 Data[30378].buy *  500 * c3_ftm;
+
+  $('#vast').html(addCommas(vast_buy_polymer.toFixed(2)));
+  $('#vast_buy').html(addCommas(vast_buy.toFixed(2)));
+  $('#vast_buy_polymer').html(addCommas(vast_buy_polymer.toFixed(2)));
+
+  $('#vital').html(addCommas(vital_buy_polymer.toFixed(2)));
+  $('#vital_buy').html(addCommas(vital_buy.toFixed(2)));
+  $('#vital_buy_polymer').html(addCommas(vital_buy_polymer.toFixed(2)));
+
+  $('#instrumental').html(addCommas(instrumental_buy_polymer.toFixed(2)));
+  $('#instrumental_buy').html(addCommas(instrumental_buy.toFixed(2)));
+  $('#instrumental_buy_polymer').html(addCommas(instrumental_buy_polymer.toFixed(2)));
 
   <% end %>
 }
